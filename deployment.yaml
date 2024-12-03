@@ -5,7 +5,7 @@ metadata:
   labels:
     app: broken-app
 spec:
-  replicas: 0
+  replicas: 1
   selector:
     matchLabels:
       app: broken-app
@@ -15,6 +15,7 @@ spec:
         app: broken-app
     spec:
       securityContext:
+        allowPrivilegeEscalation: false
         runAsUser: 11000
         runAsGroup: 11000
         fsGroup: 11000
